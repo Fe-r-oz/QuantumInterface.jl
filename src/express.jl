@@ -34,3 +34,8 @@ struct CliffordRepr <: AbstractRepresentation end
 struct GabsRepr{B} <: AbstractRepresentation 
     basis::B
 end
+"""Representation using the QuantumToolbox.jl library (similar to QuantumOptics but with simpler basis handling)."""
+struct QuantumToolboxRepr <: AbstractRepresentation 
+    cutoff::Int
+end
+QuantumToolboxRepr(;cutoff::Int=2) = QuantumToolboxRepr(cutoff)
